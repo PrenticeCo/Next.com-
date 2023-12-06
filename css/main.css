@@ -1,0 +1,202 @@
+@charset "UTF-8";
+/***
+    The new CSS reset - version 1.8.5 (last updated 14.6.2023)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+    - The "html" attribute is exclud, because otherwise a bug in Chrome breaks the CSS hyphens property (https://github.com/elad2412/the-new-css-reset/issues/36)
+ */
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a,
+button {
+  cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-inline-size: 100%;
+  max-block-size: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input,
+textarea {
+  -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  -moz-appearance: revert;
+       appearance: revert;
+}
+
+/* preformatted text - use only for this feature */
+:where(pre) {
+  all: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::-moz-placeholder {
+  color: unset;
+}
+::placeholder {
+  color: unset;
+}
+
+/* remove default dot (•) sign */
+::marker {
+  content: initial;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly.
+   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element */
+:where([contenteditable]:not([contenteditable=false])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable=true]) {
+  -webkit-user-drag: element;
+}
+
+/* Revert Modal native behavior */
+/* :where(dialog:modal) {
+  all: revert;
+} */
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.header {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  max-width: 1280px;
+  padding: 10px 25px 10px 32px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+.header__left {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  width: 50%;
+}
+.header__left__search {
+  width: 99%;
+  text-overflow: ellipsis;
+  color: #515151;
+}
+.header__left__search::-moz-placeholder {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}
+.header__left__search::placeholder {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}
+.header__left__search__container {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  padding: 0.41rem 0.5rem 0.41rem 1rem;
+  border-radius: 15px;
+  border: solid 1px #808080;
+  background-color: #f7f7f7;
+}
+.header__left__search__container:hover {
+  background-color: white;
+}
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.header__right__account {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.header__right__account__text {
+  font-family: Poppins, "Helvetica Neue", Arial, sans-serif;
+  text-overflow: ellipsis;
+  max-width: 105px;
+  color: rgb(0, 0, 0);
+  font-size: 0.75rem;
+}
+.header__right__bag {
+  height: 80%;
+}
+.header__right__bag__img {
+  height: 25px;
+  width: 25px;
+  min-width: 25px;
+}
+
+.checkout__btn {
+  align-self: center;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  min-width: 7.5rem;
+  height: 2.25rem;
+}
+.checkout__btn__text {
+  width: 100%;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  border: 0;
+  color: #ffffff;
+  opacity: 0.3;
+  border-radius: 2rem;
+  background-color: #007a7a;
+  padding: 0.5625rem 0.5rem;
+  text-align: center;
+}/*# sourceMappingURL=main.css.map */

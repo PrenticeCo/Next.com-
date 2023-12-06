@@ -3,15 +3,56 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title></title>
+    <title>Next</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
-    <header class="header"></header>
+    <header class="header">
+      <nav class="header__left">
+        <img
+          class="header__left__logo"
+          src="https://www.next.co.uk/static-content/icons/header/next/v1/vision/new-next-gold-logo.svg"
+        />
+        <nav class="header__left__search__container">
+          <input
+            class="header__left__search"
+            type="search"
+            placeholder="Search product or brand"
+          />
+          <img
+            class="header__left__search__img"
+            src="https://www.next.co.uk/static-content/icons/header/next/v1/vision/search-input-button.svg"
+          />
+        </nav>
+      </nav>
+
+      <nav class="header__right">
+        <div class="header__right__account">
+          <p class="header__right__account__text">My Account</p>
+          <img
+            class="header__right__account__img"
+            src="https://www.next.co.uk/static-content/icons/header/next/v1/vision/next_my-account_desktop.svg"
+          />
+        </div>
+        <div class="header__right__bag">
+          <img class="header__right__bag__img" src="images/694575.png" />
+        </div>
+        <div class="checkout__btn">
+          <button class="checkout__btn__text">Checkout</button>
+        </div>
+      </nav>
+    </header>
     <main></main>
     <footer></footer>
+
     <script src="script.js" async defer></script>
   </body>
 </html>
