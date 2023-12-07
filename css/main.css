@@ -172,11 +172,12 @@ meter {
   font-size: 0.75rem;
 }
 .header__right__bag {
-  height: 80%;
+  display: flex;
+  align-items: center;
 }
 .header__right__bag__img {
-  height: 25px;
-  width: 25px;
+  height: 23px;
+  width: 23px;
   min-width: 25px;
 }
 
@@ -199,4 +200,37 @@ meter {
   background-color: #007a7a;
   padding: 0.5625rem 0.5rem;
   text-align: center;
+}
+
+#search__btn:hover {
+  cursor: pointer;
+}
+
+.banner {
+  background-color: black;
+  width: 100%;
+}
+.banner__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  max-width: 1280px;
+  gap: 20px;
+}
+.banner__content > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 10px 25px 10px 25px;
+  color: white;
+  flex: 1 1 30%;
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+}
+.banner__content > a:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */
