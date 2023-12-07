@@ -1,0 +1,94 @@
+.header {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  max-width: 1280px;
+  padding: 10px 25px 10px 32px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    width: 50%;
+
+    &__search {
+      width: 99%;
+      text-overflow: ellipsis;
+      color: #515151;
+      &::placeholder {
+        font-family: "Poppins", sans-serif;
+        font-weight: 300;
+      }
+
+      &__container {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+        padding: 0.41rem 1rem 0.41rem 1rem;
+        border-radius: 15px;
+        border: solid 1px #808080;
+        background-color: #f7f7f7;
+
+        &:hover {
+          background-color: white;
+        }
+      }
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    &__account {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      &__text {
+        font-family: Poppins, "Helvetica Neue", Arial, sans-serif;
+        text-overflow: ellipsis;
+        max-width: 105px;
+        color: rgb(0, 0, 0);
+        font-size: 0.75rem;
+      }
+    }
+
+    &__bag {
+      display: flex;
+      align-items: center;
+      &__img {
+        height: 23px;
+        width: 23px;
+        min-width: 25px;
+      }
+    }
+  }
+}
+
+.checkout__btn {
+  align-self: center;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  min-width: 7.5rem;
+  height: 2.25rem;
+
+  &__text {
+    width: 100%;
+    height: 100%;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    border: 0;
+    color: #ffffff;
+    opacity: 0.3;
+    border-radius: 2rem;
+    background-color: #007a7a;
+    padding: 0.5625rem 0.5rem;
+    text-align: center;
+  }
+}
