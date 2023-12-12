@@ -66,18 +66,18 @@
     &__card {
       &__anchor {
         flex: 0 1 20%;
+        max-width: 20%;
         position: relative;
-      }
-
-      &__title {
-        font-size: 0.9rem;
-        font-weight: 400;
       }
 
       &__content {
         display: flex;
         flex-direction: column;
         gap: 5px;
+        font-size: 0.9rem;
+        font-weight: 400;
+        text-overflow: clip;
+        overflow: hidden;
 
         &__colours {
           > img {
@@ -117,3 +117,8 @@
     }
   }
 }
+
+// [class^="mens__shirts__cards__card__title"] {
+//   display: flex;
+//   flex-flow: wrap;
+// }

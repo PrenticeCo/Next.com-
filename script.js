@@ -13,9 +13,14 @@ const testApi = async () => {
   console.log(items);
   items.forEach((item, index) => {
       const cardImg = document.querySelector(`.mens__shirts__cards__card__img${index + 1}`);
+      const cardTitle = document.querySelector(`.mens__shirts__cards__card__title${index + 1}`)
+      const cardPrice = document.querySelector(`.mens__shirts__cards__card__subcontent__price${index + 1}`)
       console.log(item.image);
+      console.log(item.description)
       cardImg.src = item.image;
       cardImg.alt = item.imageAlt;
+      cardTitle.innerHTML = item.description;
+      cardPrice.innerHTML = item.price
     });
   }
 

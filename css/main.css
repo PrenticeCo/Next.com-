@@ -269,16 +269,17 @@ meter {
 }
 .mens__shirts__cards__card__anchor {
   flex: 0 1 20%;
+  max-width: 20%;
   position: relative;
-}
-.mens__shirts__cards__card__title {
-  font-size: 0.9rem;
-  font-weight: 400;
 }
 .mens__shirts__cards__card__content {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-overflow: clip;
+  overflow: hidden;
 }
 .mens__shirts__cards__card__content__colours > img {
   border-radius: 50%;
