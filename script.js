@@ -1,45 +1,34 @@
-// const testAPI = async () => {
-//   let response = await fetch("https://6353d42fe64783fa82798680.mockapi.io/api/adobe/productItems/")
-//   let data = await response.json()
-//   console.log(data)
-// }
-
-// testAPI()
-
-
 const testApi = async () => {
   const response = await fetch("https://6353d42fe64783fa82798680.mockapi.io/api/adobe/productItems/");
   const items = await response.json();
   console.log(items);
 
-  items.forEach((item, index) => {
-    const cardImg = document.querySelector(`.mens__shirts__cards__card__img${index + 1}`);
-    const cardTitle = document.querySelector(`.mens__shirts__cards__card__title${index + 1}`);
-    const cardPrice = document.querySelector(`.mens__shirts__cards__card__subcontent__price${index + 1}`);
-    const colorContainer = document.querySelector(`.mens__shirts__cards__card__content__colors${index + 1}`);
 
-    item.colors.forEach(color => {
-      const colorElement = document.createElement('div');
-      colorElement.classList.add('color');
-    
-      if (color === 'white') {
-        colorElement.style.backgroundColor = 'whitesmoke'; 
-      } else {
-        colorElement.style.backgroundColor = color;
-      }
-    
-      colorContainer.appendChild(colorElement);
-    });
+  const productList = document.querySelector(".product--list__card");
 
-    console.log(item.image);
-    console.log(item.description);
+  productList.innerHTML = items.map((item) => {
     console.log(item.colors);
+    return (
+      `
+      <img class="product--list__img" src="${item.image}" alt="${item.altImage}" />
+      <span class="card--heart__container">
+        <img class="card--heart" src="/images/heart.svg" />
+      </span>
+      <div class="product--list__content">
+        <h3 class="product--list__title">${item.description}</h3>
+        <h3 class="product--list__price">${item.price}</h3>
+        <div class="product--list__colors">
+          ${item.colors.map((color) => {
+            console.log(color); 
+            return `<div class="colors" style="background-color: ${color};"></div>`;
+          }).join('')}
+        </div>
+      </div>
+      `
+    );
+  }).join('');
+  
+}
 
-    cardImg.src = item.image;
-    cardImg.alt = item.imageAlt;
-    cardTitle.innerHTML = item.description;
-    cardPrice.innerHTML = item.price;
-  });
-};
 
 testApi();
