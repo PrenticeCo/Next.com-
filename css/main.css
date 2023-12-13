@@ -206,6 +206,10 @@ meter {
   cursor: pointer;
 }
 
+html {
+  min-width: 800px;
+}
+
 .banner {
   background-color: black;
   width: 100%;
@@ -279,8 +283,6 @@ meter {
   gap: 5px;
   font-size: 0.9rem;
   font-weight: 400;
-  text-overflow: clip;
-  overflow: hidden;
 }
 .mens__shirts__cards__card__subcontent {
   display: flex;
@@ -309,6 +311,12 @@ meter {
 [class^=mens__shirts__cards__card__content__colors] {
   display: flex;
   gap: 5px;
+}
+
+[class^=mens__shirts__cards__card__title] {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .color {
