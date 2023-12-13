@@ -10,7 +10,7 @@ const testApi = async () => {
     console.log(item.colors);
     return (
       `
-      <a class="product--list__card">
+      <a class="product--list__card" href="">
       <img class="product--list__img" src="${item.image}" alt="${item.altImage}" />
       <span class="card--heart__container">
         <img class="card--heart" src="/images/heart.svg" />
