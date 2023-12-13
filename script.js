@@ -4,12 +4,13 @@ const testApi = async () => {
   console.log(items);
 
 
-  const productList = document.querySelector(".product--list__card");
+  const productList = document.querySelector(".product--list");
 
   productList.innerHTML = items.map((item) => {
     console.log(item.colors);
     return (
       `
+      <a class="product--list__card">
       <img class="product--list__img" src="${item.image}" alt="${item.altImage}" />
       <span class="card--heart__container">
         <img class="card--heart" src="/images/heart.svg" />
@@ -24,6 +25,7 @@ const testApi = async () => {
           }).join('')}
         </div>
       </div>
+      </a>
       `
     );
   }).join('');
