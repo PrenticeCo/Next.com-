@@ -1,5 +1,5 @@
-html {
-  min-width: 800px;
+* {
+  box-sizing: border-box;
 }
 
 .banner {
@@ -66,11 +66,19 @@ html {
     flex-flow: wrap;
     gap: 17px;
     margin-bottom: 15px;
+    border: solid;
 
     &__card {
-      flex: 0 1 20%;
-      max-width: 20%;
+      display: flex;
+      flex-flow: wrap;
+      width: 20%;
       position: relative;
+      border: solid;
+    }
+
+    &__img {
+      width: 100%;
+      object-fit: cover;
     }
 
     &__content {
@@ -79,6 +87,19 @@ html {
       gap: 5px;
       font-size: 0.9rem;
       font-weight: 400;
+      width: 100%;
+      border: solid;
+    }
+
+    &__title {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      border: solid;
+    }
+
+    &__colors {
+      display: flex;
+      gap: 5px;
     }
   }
 }
@@ -101,9 +122,9 @@ html {
   }
 }
 
-.color {
+.colors {
+  border: solid;
   height: 20px;
   width: 20px;
   border-radius: 50%;
-  border: solid 1px;
 }
