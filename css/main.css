@@ -276,8 +276,7 @@ meter {
 }
 .mens--shirts .product--list__img {
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  margin-bottom: 10px;
 }
 .mens--shirts .product--list__content {
   display: flex;
@@ -311,8 +310,23 @@ meter {
 }
 
 .colors {
-  border: solid 1px;
+  border: solid 1px #808080;
   height: 20px;
   width: 20px;
-  border-radius: 3px;
+  border-radius: 50%;
+}
+.colors:hover {
+  border: solid 2px;
+  outline: solid 2px white;
+  transform: scale(1.2);
+}
+
+.footer {
+  background-color: #f7f7f7;
+  margin-top: 20px;
+}
+.footer__content {
+  max-width: 1280px;
+  margin: auto;
+  padding: 10px 0 10px 0;
 }/*# sourceMappingURL=main.css.map */
