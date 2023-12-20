@@ -396,6 +396,14 @@ meter {
 .product--item--dropdowns__color:hover {
   outline: solid 1px black;
 }
+.product--item--dropdowns__color__icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: solid 1px;
+  position: absolute;
+  left: 70px;
+}
 .product--item--dropdowns__color__container {
   display: flex;
   gap: 40px;
