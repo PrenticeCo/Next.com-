@@ -10,7 +10,7 @@ const testApi = async () => {
     console.log(item.colors);
     return (
       `
-      <a class="product--list__card" href="">
+      <a class="product--list__card" href="${item.id}.html">
       <img class="product--list__img" src="${item.image}" alt="${item.altImage}" />
       <span class="card--heart__container">
         <img class="card--heart" src="/images/heart.svg" />
@@ -34,3 +34,19 @@ const testApi = async () => {
 
 
 testApi();
+
+// const [cart, setShoppingCart] = useState([]);
+
+// const addToCart = (id) => {
+
+// console.log("id:", id)
+// setShoppingCart(
+//   [
+//     ...shoppingCart,
+//     {...obj}
+//   ]
+//   );
+// console.log(shoppingCart)
+// }
+
+// const {id, itemName, price, itemImage} = props.data;
