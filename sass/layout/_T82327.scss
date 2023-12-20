@@ -32,48 +32,71 @@
   &__price {
     display: flex;
     justify-content: flex-end;
-    border: solid;
   }
 
   &--dropdowns {
-    border: solid;
     display: flex;
     flex-direction: column;
     gap: 10px;
 
+    &__arrow {
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      right: 15px;
+      top: 11px;
+      pointer-events: none;
+    }
+
     &__color {
-      outline: solid;
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 60%;
+      flex-grow: 1;
+      border-radius: 32px;
+      padding: 6px 10px 6px 10px;
+      outline: solid 1px #949494;
+
+      &:hover {
+        outline: solid 1px black;
+      }
 
       &__container {
         display: flex;
-        outline: solid;
         gap: 40px;
+        position: relative;
       }
 
       &__text {
         min-width: 45px;
+        display: flex;
+        align-items: center;
       }
     }
 
     &__size {
-      outline: solid;
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 60%;
+      flex-grow: 1;
+      border-radius: 32px;
+      padding: 6px 10px 6px 10px;
+      outline: solid 1px #949494;
+
+      &:hover {
+        outline: solid 1px black;
+      }
 
       &__container {
         display: flex;
-        outline: solid;
         gap: 40px;
+        position: relative;
       }
 
       &__text {
         min-width: 45px;
+        display: flex;
+        align-items: center;
       }
     }
   }
