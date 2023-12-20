@@ -54,7 +54,7 @@
       align-items: center;
       flex-grow: 1;
       border-radius: 32px;
-      padding: 6px 10px 6px 10px;
+      padding: 6px 10px 6px 40px;
       outline: solid 1px #949494;
 
       &:hover {
@@ -67,7 +67,8 @@
         border-radius: 50%;
         border: solid 1px;
         position: absolute;
-        left: 70px;
+        left: 95px;
+        top: 5px;
       }
 
       &__container {
