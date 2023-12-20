@@ -285,12 +285,17 @@ meter {
   justify-content: space-between;
   flex-flow: wrap;
   gap: 17px;
+  margin-bottom: 10px;
 }
 .mens--shirts .product--list__card {
   display: flex;
   flex-flow: wrap;
   width: calc(25% - 15px);
   position: relative;
+}
+.mens--shirts .product--list__card:hover {
+  transform: scale(1.005);
+  transition: 0.3s;
 }
 .mens--shirts .product--list__img {
   width: 100%;
@@ -303,7 +308,6 @@ meter {
   font-size: 0.9rem;
   font-weight: 400;
   width: 100%;
-  padding: 10px;
 }
 .mens--shirts .product--list__title {
   overflow: hidden;
@@ -332,13 +336,10 @@ meter {
   border: solid 1px #808080;
   height: 20px;
   width: 20px;
-  border-radius: 50%;
   margin-bottom: 5px;
 }
 .colors:hover {
   border: solid 2px;
-  outline: solid 2px white;
-  transform: scale(1.2);
 }
 
 * {
@@ -365,8 +366,10 @@ meter {
 }
 .product--item__title {
   font-weight: 500;
+  max-width: 90%;
 }
 .product--item__price {
+  font-weight: 500;
   display: flex;
   justify-content: flex-end;
 }
@@ -444,16 +447,6 @@ meter {
   min-width: 45px;
   display: flex;
   align-items: center;
-}
-
-.scroll--items__container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 10px;
-  height: 350px;
-  width: 5%;
-  margin-top: 30px;
 }
 
 option {
