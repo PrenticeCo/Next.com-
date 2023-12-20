@@ -17,7 +17,20 @@ const testApi = async () => {
             });
         
     });
+
+    const colorDiv = document.querySelector(".product--item--dropdowns__color__icon"); 
+
+    productItemColor.addEventListener("change", function() {
+        const selectedColor = productItemColor.value;
+        colorDiv.style.backgroundColor = selectedColor;
+        
+    });
+
+    const initialColor = productItemColor.value;
+        colorDiv.style.backgroundColor = initialColor;
 }
 
 testApi();
+
+
 
