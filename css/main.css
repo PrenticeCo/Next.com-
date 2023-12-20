@@ -206,6 +206,23 @@ meter {
   cursor: pointer;
 }
 
+.bag {
+  border: solid;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-radius: 32px;
+  background-color: #006060;
+  color: white;
+  font-weight: 600;
+  padding: 10px 0 10px 0;
+  margin-top: 15px;
+}
+.bag__container {
+  width: 100%;
+  border: solid;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -285,6 +302,7 @@ meter {
   font-size: 0.9rem;
   font-weight: 400;
   width: 100%;
+  padding: 10px;
 }
 .mens--shirts .product--list__title {
   overflow: hidden;
@@ -314,11 +332,101 @@ meter {
   height: 20px;
   width: 20px;
   border-radius: 50%;
+  margin-bottom: 5px;
 }
 .colors:hover {
   border: solid 2px;
   outline: solid 2px white;
   transform: scale(1.2);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", "Helvetica Neue", Arial, sans-serif;
+}
+
+.product--item__container {
+  display: flex;
+  border: solid;
+  max-width: 1024px;
+  margin: auto;
+  gap: 30px;
+  padding: 15px;
+}
+.product--item__main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding-top: 20px 16px 20px 16px;
+}
+.product--item__main__container {
+  display: flex;
+  justify-content: space-between;
+}
+.product--item__title {
+  font-weight: 500;
+}
+.product--item__price {
+  display: flex;
+  justify-content: flex-end;
+  border: solid;
+}
+.product--item--dropdowns {
+  border: solid;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.product--item--dropdowns__color {
+  outline: solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+}
+.product--item--dropdowns__color__container {
+  display: flex;
+  outline: solid;
+  gap: 40px;
+}
+.product--item--dropdowns__color__text {
+  min-width: 45px;
+}
+.product--item--dropdowns__size {
+  outline: solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+}
+.product--item--dropdowns__size__container {
+  display: flex;
+  outline: solid;
+  gap: 40px;
+}
+.product--item--dropdowns__size__text {
+  min-width: 45px;
+}
+
+.scroll--items__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  height: 350px;
+  width: 5%;
+  margin-top: 30px;
+}
+
+option {
+  display: flex;
+  justify-content: center;
+}
+
+hr {
+  border: solid 0.5px;
+  color: #eaeaea;
+  margin: 15px 0 15px 0;
 }
 
 .footer {
