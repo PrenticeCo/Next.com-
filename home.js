@@ -11,9 +11,7 @@ const testApi = async () => {
     .map((item) => {
       console.log(item.colors);
       return `
-      <a class="product--list__card" href="product.html?id=${
-        item.id
-      }" data-id="${item.id}">
+      <a class="product--list__card" href="product.html?id=${item.id}">
       <img class="product--list__img" src="${item.image}" alt="${
         item.altImage
       }" />
