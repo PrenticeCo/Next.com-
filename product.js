@@ -23,7 +23,10 @@ const testApi = async () => {
   console.log(items);
 
   const colorsHTML = items.colors
-    .map((item) => `<option value="${item}">${item}</option>`)
+    .map(
+      (item) =>
+        `<option class ="color--option" value="${item}">${item}</option>`
+    )
     .join("");
   console.log(colorsHTML);
   colorDropdown.insertAdjacentHTML("beforeend", colorsHTML);
