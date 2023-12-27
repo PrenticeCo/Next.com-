@@ -241,6 +241,7 @@ meter {
   color: white;
   font-weight: 600;
   padding: 4px;
+  display: block;
   cursor: pointer;
 }
 
