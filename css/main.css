@@ -517,11 +517,6 @@ div[class^=cart--items__] {
   white-space: nowrap;
 }
 
-.remove--btn {
-  border: solid;
-  display: block;
-}
-
 .footer {
   background-color: #f7f7f7;
 }
