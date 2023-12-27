@@ -62,6 +62,7 @@
     &__bag {
       display: flex;
       align-items: center;
+      position: relative;
       &__img {
         height: 23px;
         width: 23px;
@@ -69,6 +70,17 @@
       }
     }
   }
+}
+
+.cart--items {
+  position: absolute;
+  background-color: white;
+  top: 25px;
+  left: -100px;
+  width: 300px;
+  max-height: 300px;
+  z-index: 1;
+  overflow: scroll;
 }
 
 .checkout__btn {
