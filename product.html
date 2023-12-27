@@ -47,6 +47,9 @@
         </div>
         <div class="header__right__bag">
           <img class="header__right__bag__img" src="images/694575.png" />
+          <div class="cart--items" style="border: solid">
+            Items in the Cart:
+          </div>
         </div>
         <div class="checkout__btn">
           <button class="checkout__btn__text">Checkout</button>
@@ -86,7 +89,7 @@
             />
             <h2 class="product--item--dropdowns__color__text">Color</h2>
 
-            <select class="product--item--dropdowns__color">
+            <select class="product--item--dropdowns__color product--select">
               <option value="" disabled selected>Please select a color</option>
             </select>
           </div>
@@ -97,7 +100,7 @@
               src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAv0lEQVR4nO3XSwqDMBRG4bOJG3T/O2lHfU3qoMtpETIQKSVqHjf0PyA48ML9zCiglFJKKaXUP3cC7kDAXwF4AOeUj6/AG5icYULcad7tkjJgwDMOvICx/I6bdxr2Do49Ijxh7CjCA8ZyIVpiLDeiBcZKIWpirDSiBqYaoiSmOqIEphkiJ6Y5IgfGDeIIxh1iD8YtYgvGPSIF0w3iF6Y7xLfb3LR693TrTGp5Ct2dxLr579/i091JKKWUUkophcs+GiV0FcyNP/cAAAAASUVORK5CYII="
             />
             <h2 class="product--item--dropdowns__size__text">Size</h2>
-            <select class="product--item--dropdowns__size">
+            <select class="product--item--dropdowns__size product--select">
               <option value="" disabled selected>Choose size</option>
               <option>XS</option>
               <option>S</option>
@@ -106,6 +109,14 @@
               <option>XL</option>
             </select>
           </div>
+          <input
+            class="product--item__quantity"
+            type="number"
+            id="quantity"
+            name="quantity"
+            min="0"
+            max="99"
+          />
         </div>
 
         <button class="bag" type="button" name="button">ADD TO BAG</button>
