@@ -2,14 +2,17 @@ const searchParams = new URLSearchParams(window.location.search);
 const id = searchParams.get("id");
 console.log(id);
 
+const addToCartButton = document.querySelector(".bag");
 const productItemColor = document.querySelector(
   ".product--item--dropdowns__color"
 );
+const productQuantity = document.querySelector(".product--item__quantity");
 const colorDiv = document.querySelector(
   ".product--item--dropdowns__color__icon"
 );
 const productDescription = document.querySelector(".product--item__title");
 const productPrice = document.querySelector(".product--item__price");
+const productSize = document.querySelector(".product--item--dropdowns__size");
 const image = document.querySelector(".image--holder");
 const colorDropdown = document.querySelector(
   ".product--item--dropdowns__color"
@@ -40,5 +43,32 @@ const testApi = async () => {
   productPrice.innerHTML = items.price;
   image.innerHTML = `<img src="${items.image}" alt="${items.imageAlt}"/>`;
 };
+
+addToCartButton.addEventListener("click", function () {
+  const selectedColor = productItemColor.value;
+  const selectedSize = productSize.value;
+  const selectedTitle = productDescription.innerHTML;
+  const selectedPrice = productPrice.innerHTML;
+  const selectedQuantity = productQuantity.value;
+
+  console.log("clicked");
+
+  const cartItem = {
+    color: selectedColor,
+    title: selectedTitle,
+    price: selectedPrice,
+    quantity: selectedQuantity,
+    size: selectedSize,
+    id,
+  };
+
+  const existingCartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+  existingCartItems.push(cartItem);
+
+  localStorage.setItem("cart", JSON.stringify(existingCartItems));
+
+  alert("Added to cart");
+});
 
 testApi();
