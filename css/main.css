@@ -182,15 +182,14 @@ meter {
   min-width: 25px;
 }
 
-.cart--items {
+.cart--items__wrapper {
   position: absolute;
-  background-color: white;
+  background-color: #ffffff;
   top: 25px;
   left: -100px;
   width: 300px;
-  max-height: 300px;
   z-index: 1;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .checkout__btn {
@@ -504,9 +503,9 @@ hr {
   margin: 15px 0 15px 0;
 }
 
-.cart--items__quantity {
-  border: solid 1px #949494;
-  padding: 2px;
+.cart--items {
+  overflow: auto;
+  max-height: 300px;
 }
 .cart--items__content {
   width: 50%;

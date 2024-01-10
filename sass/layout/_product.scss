@@ -159,10 +159,8 @@ hr {
 }
 
 .cart--items {
-  &__quantity {
-    border: solid 1px #949494;
-    padding: 2px;
-  }
+  overflow: auto;
+  max-height: 300px;
   &__content {
     width: 50%;
   }

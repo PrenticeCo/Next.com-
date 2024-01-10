@@ -72,15 +72,14 @@
   }
 }
 
-.cart--items {
+.cart--items__wrapper {
   position: absolute;
-  background-color: white;
+  background-color: #ffffff;
   top: 25px;
   left: -100px;
   width: 300px;
-  max-height: 300px;
   z-index: 1;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .checkout__btn {
