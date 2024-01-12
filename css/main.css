@@ -180,6 +180,7 @@ meter {
   height: 23px;
   width: 23px;
   min-width: 25px;
+  cursor: pointer;
 }
 
 .cart--items__wrapper {
@@ -190,6 +191,7 @@ meter {
   width: 300px;
   z-index: 1;
   overflow: auto;
+  opacity: 0;
 }
 
 .checkout__btn {
