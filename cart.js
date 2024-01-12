@@ -7,12 +7,15 @@ const removeButton = document.querySelectorAll(".remove--btn");
 const cartFunction = () => {
   const existingCartItems = JSON.parse(localStorage.getItem("cart")) || [];
   if (existingCartItems.length === 0) {
+    cartContent.innerHTML = "";
     return;
   }
   cartContent.innerHTML = existingCartItems
     .map(
       (item) => `
-      <div class="cart--items__content data-id="${item.id}">
+      <div class="cart--items__content" data-id="${item.id}" data-color="${
+        item.color
+      }" data-size="${item.size}">
         <hr>
         <div class="cart--items__id">${item.id}</div>
         <div class="cart--items__title">${item.title}</div>
@@ -32,61 +35,25 @@ const cartFunction = () => {
 
 cartFunction();
 
-const cartColor = document.querySelector(".cart--items__color");
-const cartSize = document.querySelector(".cart--items__size");
-const cartPrice = document.querySelector(".cart--items__price");
-const cartId = document.querySelector(".cart--items__id");
-const cartTitle = document.querySelector(".cart--items__title");
-const cartQuantity = document.querySelector(".cart--items__quantity");
+cartContent.addEventListener("click", (event) => {
+  console.log("hi");
 
-const addToCart = (event) => {
-  event.preventDefault();
-  const localStorageItems = localStorage.getItem("cart");
-
-  const newItem = {
-    color: cartColor.value,
-    title: cartTitle.innerHTML,
-    price: cartPrice.innerHTML,
-    quantity: cartQuantity.value,
-    size: cartSize.value,
-    id: cartId.innerHTML,
-  };
-
-  if (!localStorageItems) {
-    localStorage.setItem("cart", JSON.stringify([newItem]));
-    cartFunction();
+  if (!event.target.classList.contains("remove--btn")) {
     return;
   }
+  const { id, color, size } = event.target.closest(
+    ".cart--items__content"
+  ).dataset;
+  const getItems = JSON.parse(localStorage.getItem("cart"));
 
-  const itemsArr = JSON.parse(localStorageItems);
+  const removeItem = getItems.filter((item) => {
+    if (id === item.id && color === item.color && size === item.size) {
+      return false;
+    } else {
+      return true;
+    }
+  });
 
-  const existingItem = itemsArr.find(
-    (itemInCart) =>
-      itemInCart.id === cartId.innerHTML &&
-      itemInCart.color === cartColor.value &&
-      itemInCart.size === cartSize.value
-  );
-
-  if (existingItem) {
-    const updateItem = itemsArr.map((itemInCart) =>
-      itemInCart.id === cartId.innerHTML &&
-      itemInCart.color === cartColor.value &&
-      itemInCart.size === cartSize.value
-        ? {
-            ...itemInCart,
-            quantity: Number(itemInCart.quantity) + Number(quantity.value),
-          }
-        : itemInCart
-    );
-    localStorage.setItem("cart", JSON.stringify(updateItem));
-    cartFunction();
-    return;
-  }
-
-  localStorage.setItem("cart", JSON.stringify([...itemsArr, newItem]));
+  localStorage.setItem("cart", JSON.stringify(removeItem));
   cartFunction();
-};
-
-addToCart();
-
-addToCartButton.addEventListener("click", addToCart);
+});
