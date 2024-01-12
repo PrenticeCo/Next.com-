@@ -1,11 +1,13 @@
+const productList = document.querySelector(".product--list");
+const cartBag = document.querySelector(".header__right__bag__img");
+const cartBox = document.querySelector(".cart--items__wrapper");
+
 const testApi = async () => {
   const response = await fetch(
     "https://6353d42fe64783fa82798680.mockapi.io/api/adobe/productItems/"
   );
   const items = await response.json();
   console.log(items);
-
-  const productList = document.querySelector(".product--list");
 
   productList.innerHTML = items
     .map((item) => {
@@ -37,3 +39,20 @@ const testApi = async () => {
 };
 
 testApi();
+
+const cartBoxClickHandler = (event) => {
+  event.stopPropagation();
+};
+
+const cartBagShow = (event) => {
+  cartBox.style.opacity = "1";
+  event.stopPropagation();
+};
+
+const cartBagHide = () => {
+  cartBox.style.opacity = "0";
+};
+
+cartBox.addEventListener("click", cartBoxClickHandler);
+cartBag.addEventListener("click", cartBagShow);
+document.addEventListener("click", cartBagHide);

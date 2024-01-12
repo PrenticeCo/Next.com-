@@ -2,6 +2,8 @@ const searchParams = new URLSearchParams(window.location.search);
 const id = searchParams.get("id");
 console.log(id);
 
+const cartBag = document.querySelector(".header__right__bag__img");
+const cartBox = document.querySelector(".cart--items__wrapper");
 const addToCartButton = document.querySelector(".bag");
 const productItemColor = document.querySelector(
   ".product--item--dropdowns__color"
@@ -56,7 +58,7 @@ addToCartButton.addEventListener("click", function (event) {
   if (!selectedSize || !selectedColor || !selectedQuantity) {
     alert("Please select all options");
     return;
-  }
+  } else alert("Added to bag");
 
   const cartItem = {
     color: selectedColor,
@@ -101,3 +103,15 @@ addToCartButton.addEventListener("click", function (event) {
 });
 
 testApi();
+
+const cartBagShow = (event) => {
+  cartBox.style.opacity = "1";
+  event.stopPropagation();
+};
+
+const cartBagHide = () => {
+  cartBox.style.opacity = "0";
+};
+
+cartBag.addEventListener("click", cartBagShow);
+document.addEventListener("click", cartBagHide);
