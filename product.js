@@ -44,14 +44,19 @@ const testApi = async () => {
   image.innerHTML = `<img src="${items.image}" alt="${items.imageAlt}"/>`;
 };
 
-addToCartButton.addEventListener("click", function () {
+addToCartButton.addEventListener("click", function (event) {
+  event.preventDefault();
   const selectedColor = productItemColor.value;
   const selectedSize = productSize.value;
   const selectedTitle = productDescription.innerHTML;
   const selectedPrice = productPrice.innerHTML;
   const selectedQuantity = productQuantity.value;
+  const localStorageItems = localStorage.getItem("cart");
 
-  console.log("clicked");
+  if (!selectedSize || !selectedColor || !selectedQuantity) {
+    alert("Please select all options");
+    return;
+  }
 
   const cartItem = {
     color: selectedColor,
@@ -62,13 +67,37 @@ addToCartButton.addEventListener("click", function () {
     id,
   };
 
-  const existingCartItems = JSON.parse(localStorage.getItem("cart")) || [];
+  if (!localStorageItems) {
+    localStorage.setItem("cart", JSON.stringify([cartItem]));
+    cartFunction();
+    return;
+  }
 
-  existingCartItems.push(cartItem);
+  const itemsArr = JSON.parse(localStorageItems);
+  const existingItem = itemsArr.find(
+    (itemInCart) =>
+      itemInCart.id === id &&
+      itemInCart.color === selectedColor &&
+      itemInCart.size === selectedSize
+  );
 
-  localStorage.setItem("cart", JSON.stringify(existingCartItems));
-
-  alert("Added to cart");
+  if (existingItem) {
+    const updateItem = itemsArr.map((itemInCart) =>
+      itemInCart.id === id &&
+      itemInCart.color === selectedColor &&
+      itemInCart.size === selectedSize
+        ? {
+            ...itemInCart,
+            quantity: Number(itemInCart.quantity) + Number(selectedQuantity),
+          }
+        : itemInCart
+    );
+    localStorage.setItem("cart", JSON.stringify(updateItem));
+    cartFunction();
+    return;
+  }
+  localStorage.setItem("cart", JSON.stringify([...itemsArr, cartItem]));
+  cartFunction();
 });
 
 testApi();
