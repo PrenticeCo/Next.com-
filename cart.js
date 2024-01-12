@@ -36,8 +36,6 @@ const cartFunction = () => {
 cartFunction();
 
 cartContent.addEventListener("click", (event) => {
-  console.log("hi");
-
   if (!event.target.classList.contains("remove--btn")) {
     return;
   }
