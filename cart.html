@@ -16,8 +16,49 @@
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
-    <div class="cart--items" style="border: solid">Items in the Cart:</div>
+    <header class="header">
+      <nav class="header__left">
+        <img
+          class="header__left__logo"
+          src="https://www.next.co.uk/static-content/icons/header/next/v1/vision/new-next-gold-logo.svg"
+        />
+        <nav class="header__left__search__container">
+          <input
+            class="header__left__search"
+            type="search"
+            placeholder="Search product or brand"
+          />
+          <button id="search__btn">
+            <img
+              class="header__left__search__img"
+              src="https://www.next.co.uk/static-content/icons/header/next/v1/vision/search-input-button.svg"
+            />
+          </button>
+        </nav>
+      </nav>
 
-    <script src="cart.js" async defer></script>
+      <nav class="header__right">
+        <div class="header__right__account">
+          <p class="header__right__account__text">My Account</p>
+          <img
+            class="header__right__account__img"
+            src="https://www.next.co.uk/static-content/icons/header/next/v1/vision/next_my-account_desktop.svg"
+          />
+        </div>
+        <div class="header__right__bag">
+          <img class="header__right__bag__img" src="images/694575.png" />
+          <div class="cart--items__wrapper" style="border: solid">
+            Your cart:
+            <div class="cart--items"></div>
+          </div>
+        </div>
+        <div class="checkout__btn">
+          <button class="checkout__btn__text">Checkout</button>
+        </div>
+      </nav>
+    </header>
+    <div class="cart--items">Items in the Cart:</div>
+
+    <script src="" async defer></script>
   </body>
 </html>
