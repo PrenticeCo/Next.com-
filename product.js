@@ -104,6 +104,10 @@ addToCartButton.addEventListener("click", function (event) {
 
 testApi();
 
+const cartBoxClickHandler = (event) => {
+  event.stopPropagation();
+};
+
 const cartBagShow = (event) => {
   cartBox.style.opacity = "1";
   event.stopPropagation();
@@ -113,5 +117,6 @@ const cartBagHide = () => {
   cartBox.style.opacity = "0";
 };
 
+cartBox.addEventListener("click", cartBoxClickHandler);
 cartBag.addEventListener("click", cartBagShow);
 document.addEventListener("click", cartBagHide);
