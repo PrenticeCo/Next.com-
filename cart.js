@@ -3,6 +3,7 @@
 const cartContent = document.querySelector(".cart--items");
 const cartPriceTotal = document.querySelector(".cart--items__price");
 const removeButton = document.querySelectorAll(".remove--btn");
+const checkoutBtn = document.querySelector(".checkout__btn__text");
 
 const cartFunction = () => {
   const existingCartItems = JSON.parse(localStorage.getItem("cart")) || [];
@@ -54,4 +55,8 @@ cartContent.addEventListener("click", (event) => {
 
   localStorage.setItem("cart", JSON.stringify(removeItem));
   cartFunction();
+});
+
+checkoutBtn.addEventListener("click", function () {
+  window.location.href = "cart.html";
 });
