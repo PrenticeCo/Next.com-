@@ -76,8 +76,8 @@
 .cart--items__wrapper {
   position: absolute;
   background-color: #ffffff;
-  top: 25px;
-  left: -100px;
+  top: 30px;
+  left: -130px;
   width: 300px;
   z-index: 1;
   overflow: auto;
@@ -98,10 +98,11 @@
     margin: 0;
     border: 0;
     color: #ffffff;
-    opacity: 0.3;
+    opacity: 1;
     border-radius: 2rem;
     background-color: #007a7a;
     padding: 0.5625rem 0.5rem;
     text-align: center;
+    cursor: pointer;
   }
 }
