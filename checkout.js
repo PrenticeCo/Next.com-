@@ -12,13 +12,21 @@ function updateCart() {
     checkoutItem.innerHTML = existingCartItems
       .map((item) => {
         return `
-          <div class="cart--content--item" data-id="${item.id}" data-color="${item.color}" data-size="${item.size}">
+          <div class="cart--content--item" data-id="${item.id}" data-color="${
+          item.color
+        }" data-size="${item.size}">
             <h2 class="cart--content--item__title">${item.title}</h2>
-            <h3 class="cart--content--item__price"><strong>${item.price}</strong></h3>
+            <div class="cart--items__price">Price: £${
+              parseFloat(item.price.replace("£", "")) * item.quantity
+            }</div>
             <h3 class="cart--content--item__color">${item.color}</h3>
             <h3 class="cart--content--item__size">${item.size}</h3> 
-            <h3 class="cart--content--item__quantity">${item.quantity}</h3>
-            <img class="cart--content--item__img" src="${item.image}" alt="Product Image" />
+            <input type="number" id="quantity" value="${
+              item.quantity
+            }" name="quantity" min="1" max="9">
+            <img class="cart--content--item__img" src="${
+              item.image
+            }" alt="Product Image" />
             <button class="remove--btn" type="button" name="remove--btn">REMOVE</button>
           </div>
         `;
