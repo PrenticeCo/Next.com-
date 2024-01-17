@@ -1,0 +1,33 @@
+.cart--wrapper {
+  margin: 10px;
+  width: 100%;
+}
+
+.cart--content--item__placeholder {
+  border: solid;
+  display: flex;
+  height: 400px;
+}
+
+.cart--content--item {
+  border: solid;
+  display: flex;
+  flex-flow: wrap;
+  flex-direction: column;
+  flex: 1 1 30%;
+  max-width: 30%;
+  gap: 10px;
+
+  &__price {
+    font-weight: bold;
+  }
+  &__color {
+  }
+  &__title {
+    border: solid;
+  }
+  &__size {
+  }
+  &__img {
+  }
+}
