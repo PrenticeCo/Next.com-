@@ -68,6 +68,9 @@
         width: 23px;
         min-width: 25px;
         cursor: pointer;
+        &:hover {
+          opacity: 0.75;
+        }
       }
     }
   }
@@ -104,5 +107,9 @@
     padding: 0.5625rem 0.5rem;
     text-align: center;
     cursor: pointer;
+
+    &:hover {
+      opacity: 0.9;
+    }
   }
 }
