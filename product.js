@@ -109,12 +109,13 @@ const cartBoxClickHandler = (event) => {
 };
 
 const cartBagShow = (event) => {
-  cartBox.style.opacity = "1";
+  console.log(cartBox);
   event.stopPropagation();
+  cartBox.style.display = "block";
 };
 
 const cartBagHide = () => {
-  cartBox.style.opacity = "0";
+  cartBox.style.display = "none";
 };
 
 cartBox.addEventListener("click", cartBoxClickHandler);
