@@ -194,7 +194,7 @@ meter {
   width: 300px;
   z-index: 1;
   overflow: auto;
-  opacity: 0;
+  display: none;
 }
 
 .checkout__btn {
@@ -244,6 +244,18 @@ meter {
   border: solid;
 }
 
+.checkout__remove--btn {
+  background-color: red;
+  color: white;
+  font-weight: 600;
+  padding: 4px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  width: 50%;
+  margin: auto;
+}
+
 .remove--btn {
   background-color: red;
   color: white;
@@ -251,6 +263,19 @@ meter {
   padding: 4px;
   display: block;
   cursor: pointer;
+}
+
+.signin--btn {
+  background-color: #198787;
+  color: white;
+  font-weight: 600;
+  padding: 4px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  width: 20%;
+  margin: auto;
+  border-radius: 25px;
 }
 
 * {
@@ -535,6 +560,13 @@ div[class^=cart--items__] {
   border: solid;
   display: flex;
   height: 400px;
+  justify-content: space-around;
+}
+
+.cart--content__title {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 20px 0;
 }
 
 .cart--content--item {
@@ -546,12 +578,51 @@ div[class^=cart--items__] {
   max-width: 30%;
   gap: 10px;
 }
-.cart--content--item__price {
-  font-weight: bold;
-}
 .cart--content--item__title {
   border: solid;
 }
+[class^=form--page__] {
+  width: 99%;
+  text-overflow: ellipsis;
+  color: #515151;
+}
+
+.form--page__input__container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  margin-bottom: 50px;
+  width: 90%;
+  padding: 0.41rem 1rem 0.41rem 1rem;
+  border-radius: 15px;
+  border: solid 1px #808080;
+  background-color: #f7f7f7;
+}
+.form--page__input__container:hover {
+  background-color: white;
+}
+
+.error--name {
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 5px;
+  display: flex;
+  width: 90%;
+  color: red;
+}
+
+.error--password,
+.error--email,
+.error--postcode {
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 5px;
+  display: flex;
+  width: 90%;
+  color: red;
+}
+
 .footer {
   background-color: #f7f7f7;
 }
