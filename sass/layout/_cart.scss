@@ -7,6 +7,13 @@
   border: solid;
   display: flex;
   height: 400px;
+  justify-content: space-around;
+}
+
+.cart--content__title {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 20px 0
 }
 
 .cart--content--item {
@@ -17,10 +24,6 @@
   flex: 1 1 30%;
   max-width: 30%;
   gap: 10px;
-
-  &__price {
-    font-weight: bold;
-  }
   &__color {
   }
   &__title {
@@ -31,3 +34,5 @@
   &__img {
   }
 }
+
+
