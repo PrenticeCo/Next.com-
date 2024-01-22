@@ -1,13 +1,13 @@
-const cartItemsDesc = document.querySelector(".cart--content__title");
-let existingCartItems = JSON.parse(localStorage.getItem("cart")) || [];
+const cartItemsDesc = document.querySelector('.cart--content__title');
+let existingCartItems = JSON.parse(localStorage.getItem('cart')) || [];
 const checkoutItem = document.querySelector(
-  ".cart--content--item__placeholder"
+  '.cart--content--item__placeholder'
 );
 
 function updateCart() {
   if (existingCartItems.length === 0) {
-    cartItemsDesc.textContent = "There is nothing in the cart";
-    checkoutItem.innerHTML = "";
+    cartItemsDesc.textContent = 'There is nothing in the cart';
+    checkoutItem.innerHTML = '';
   } else {
     checkoutItem.innerHTML = existingCartItems
       .map((item) => {
@@ -17,11 +17,11 @@ function updateCart() {
         }" data-size="${item.size}">
             <h2 class="cart--content--item__title">${item.title}</h2>
             <div class="cart--items__price">Price: £${
-              parseFloat(item.price.replace("£", "")) * item.quantity
+              parseFloat(item.price.replace('£', '')) * item.quantity
             }</div>
             <h3 class="cart--content--item__color">Color: ${item.color}</h3>
             <h3 class="cart--content--item__size">Size: ${item.size}</h3> 
-            <input class="cart--content--item__quantity" type="number" id="quantity" value="Quantity: ${
+            <input class="cart--content--item__quantity" type="number" id="quantity" value="${
               item.quantity
             }" name="quantity" min="1" max="9">
             <img class="cart--content--item__img" src="${
@@ -31,32 +31,34 @@ function updateCart() {
           </div>
         `;
       })
-      .join("");
+      .join('');
   }
 }
 
-checkoutItem.addEventListener("click", (event) => {
-  const isDelete = event.target.classList.contains("remove--btn");
+checkoutItem.addEventListener('click', (event) => {
+  const isDelete = event.target.classList.contains('checkout__remove--btn');
   if (
     !(
       !isDelete ||
-      !event.target.classList.contains("cart--content--item__quantity")
+      !event.target.classList.contains('cart--content--item__quantity')
     )
   ) {
     return;
   }
 
-  const cartItemElement = event.target.closest(".cart--content--item");
+  const cartItemElement = event.target.closest('.cart--content--item');
   const { id, color, size } = cartItemElement.dataset;
 
   // cartItemElement.remove();
+
+  console.log(isDelete);
 
   if (isDelete) {
     existingCartItems = existingCartItems.filter((item) => {
       return !(id === item.id && color === item.color && size === item.size);
     });
-    console.log(existingCartItems);
   } else {
+    console.log('we are here');
     existingCartItems = existingCartItems.map((item) =>
       item.id === id && item.color === color && item.size === size
         ? {
@@ -67,7 +69,7 @@ checkoutItem.addEventListener("click", (event) => {
     );
   }
 
-  localStorage.setItem("cart", JSON.stringify(existingCartItems));
+  localStorage.setItem('cart', JSON.stringify(existingCartItems));
   updateCart();
 });
 
