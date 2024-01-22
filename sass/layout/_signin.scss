@@ -1,0 +1,41 @@
+[class^="form--page__"] {
+    width: 99%;
+    text-overflow: ellipsis;
+    color: #515151;
+}
+
+    .form--page__input__container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: auto;
+        margin-bottom: 50px;
+        width: 90%;
+        padding: 0.41rem 1rem 0.41rem 1rem;
+        border-radius: 15px;
+        border: solid 1px #808080;
+        background-color: #f7f7f7;
+        &:hover {
+            background-color: white;
+      }
+}
+
+
+.error--name {
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 5px;
+    display: flex;
+    width: 90%;
+    color: red;
+}
+.error--password,
+.error--email,
+.error--postcode {
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 5px;
+    display: flex;
+    width: 90%;
+    color: red;
+}
