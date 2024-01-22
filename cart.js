@@ -57,6 +57,5 @@ cartContent.addEventListener("click", (event) => {
 });
 
 checkoutBtn.addEventListener("click", function () {
-  checkoutBtn.style.scale = "1.05";
   window.location.href = "cart.html";
 });

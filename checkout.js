@@ -55,6 +55,7 @@ checkoutItem.addEventListener("click", (event) => {
     existingCartItems = existingCartItems.filter((item) => {
       return !(id === item.id && color === item.color && size === item.size);
     });
+    console.log(existingCartItems);
   } else {
     existingCartItems = existingCartItems.map((item) =>
       item.id === id && item.color === color && item.size === size
@@ -62,7 +63,7 @@ checkoutItem.addEventListener("click", (event) => {
             ...item,
             quantity: Number(event.target.value),
           }
-        : itemInCart
+        : item
     );
   }
 
