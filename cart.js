@@ -18,7 +18,6 @@ const cartFunction = () => {
         item.color
       }" data-size="${item.size}">
         <hr>
-        <div class="cart--items__id">${item.id}</div>
         <div class="cart--items__title">${item.title}</div>
         <div class="cart--items__color">Color: ${item.color}</div>
         <div class="cart--items__size">Size: ${item.size}</div>
@@ -58,5 +57,6 @@ cartContent.addEventListener("click", (event) => {
 });
 
 checkoutBtn.addEventListener("click", function () {
+  checkoutBtn.style.scale = "1.05";
   window.location.href = "cart.html";
 });
